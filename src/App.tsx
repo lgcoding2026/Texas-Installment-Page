@@ -314,8 +314,8 @@ export default function App() {
             
             <p className={isWireframe ? "text-slate-600 text-xs md:text-base max-w-xl leading-relaxed" : "text-slate-200 text-xs md:text-base lg:text-lg max-w-xl leading-relaxed"}>
               {isWireframe 
-                ? "[BODY_HEURISTIC_TEXT] If you want the speed of traditional payday loans but need more time to pay, a Texas installment loan is the perfect fit. Same-day funding available."
-                : <>If you want the speed of traditional payday loans but need more time to pay, a Texas installment loan is the perfect fit. Get up to $1,200 deposited fast, with smaller payments that match your budget. Enjoy instant approval, no hard credit checks, and same-day* funding! <strong className="font-bold text-white">You deserve a smoother, stress-free path forward.</strong></>
+                ? "[BODY_HEURISTIC_TEXT] If you want the speed of traditional payday loans but need more time to pay, a Texas installment loan is the perfect fit."
+                : <>If you want the speed of traditional payday loans but need more time to pay, a Texas installment loan is the perfect fit. Enjoy instant approval, no hard credit checks, and same-day* funding! <strong className="font-bold text-white">You deserve a smoother, stress-free path forward.</strong></>
               }
             </p>
 
