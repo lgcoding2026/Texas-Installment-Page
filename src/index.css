@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-mono: "Fira Code", ui-monospace, monospace;
+  
+  --color-brand-blue-900: #021a30;
+  --color-brand-blue-800: #072a4e;
+  --color-brand-blue-700: #0a3d6e;
+  --color-brand-blue-600: #0f528d;
+  --color-brand-blue-500: #1a6fae;
+  
+  --color-brand-teal: #0fb980;
+  --color-brand-teal-dark: #098259;
+  --color-brand-teal-light: #e6faf2;
+  
+  --color-brand-amber: #f59e0b;
+  --color-brand-success: #10b981;
+  --color-brand-bg-light: #f8fafc;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-slate-50 text-slate-900 overflow-x-hidden;
+  }
+}

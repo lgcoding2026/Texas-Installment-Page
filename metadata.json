@@ -1,0 +1,6 @@
+{
+  "name": "Texas Online Loans",
+  "description": "A high-converting, responsive, and modern landing page for Texas online installment loans with an interactive calculator, comparison table, and FAQ widget.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
