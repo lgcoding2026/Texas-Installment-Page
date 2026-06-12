@@ -25,7 +25,6 @@ import { FAQ_DATA } from "./data";
 import { LoanFrequency } from "./types";
 import ApplicationModal from "./components/ApplicationModal";
 import CitySelector from "./components/CitySelector";
-import TrustpilotBadge from "./components/TrustpilotBadge";
 import LoginModal from "./components/LoginModal";
 // @ts-expect-error - resolved by Vite but unrecognized by standard TS rules
 import monumentValley from "./assets/images/monument_valley_1779474514751.png";
@@ -290,15 +289,7 @@ export default function App() {
         <div className="w-full max-w-7xl mx-auto px-4 md:px-8 grid md:grid-cols-12 gap-4 md:gap-12 items-center relative z-10">
           {/* Left Text Column */}
           <div className="md:col-span-7 space-y-3.5 md:space-y-6 text-center md:text-left">
-            {isWireframe ? (
-              <span className="inline-block border border-dashed border-slate-900 font-bold text-[10px] md:text-xs py-1 px-3 bg-slate-50 uppercase tracking-wider">
-                [TOP_TAGBAND: Same-Day Funding to Debit Card]
-              </span>
-            ) : (
-              <span className="inline-flex items-center gap-1.5 bg-brand-teal/20 text-brand-teal font-semibold text-[10px] md:text-xs py-1 px-3 md:py-1.5 md:px-3.5 rounded-full uppercase tracking-wider border border-brand-teal/25">
-                <Zap className="w-3 md:w-3.5 h-3 md:h-3.5 text-brand-teal animate-pulse" /> Same-Day* Funding to Debit Card
-              </span>
-            )}
+            {/* Tagband removed */}
             
             <h1 className={
               isWireframe 
@@ -342,13 +333,45 @@ export default function App() {
               ))}
             </div>
 
-            {/* Google Rating Quick Text */}
-            <p className={isWireframe ? "text-[10px] text-slate-500 flex items-center justify-center md:justify-start" : "text-[11px] md:text-xs text-slate-300 flex items-center justify-center md:justify-start gap-1"}>
-              {isWireframe 
-                ? "[SOCIAL_METADATA_LINE: Rated 4.6/5.0 Stars by 8,000+ customers]"
-                : "⭐ Rated 4.6 / 5.0 by 8,000+ happy customers. Fully paperless process."
-              }
-            </p>
+            {/* Google & Trustpilot Rating Badges */}
+            <div className={isWireframe ? "text-[10px] text-slate-505 flex items-center justify-center md:justify-start font-mono" : "flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-2 pt-1"}>
+              {isWireframe ? (
+                <span>[RATINGS: Trustpilot 5.0/5.0 Stars (8,000+ Reviews) | Google 4.6/5.0 Stars]</span>
+              ) : (
+                <>
+                  {/* Trustpilot review line */}
+                  <div className="flex items-center gap-1.5 bg-black/15 px-3 py-1.5 rounded-full border border-white/5 shadow-xs">
+                    <span className="font-extrabold text-white tracking-tight text-[11px]">Trustpilot</span>
+                    <div className="flex gap-0.5">
+                      {[...Array(5)].map((_, i) => (
+                        <div key={i} className="w-3 h-3 bg-[#00b67a] rounded-xs flex items-center justify-center text-white text-[8px] font-black">
+                          ★
+                        </div>
+                      ))}
+                    </div>
+                    <span className="text-[10px] text-slate-300 font-semibold leading-none">5.0 <span className="text-slate-400 font-normal">(8k+ reviews)</span></span>
+                  </div>
+
+                  {/* Google review line */}
+                  <div className="flex items-center gap-1.5 bg-black/15 px-3 py-1.5 rounded-full border border-white/5 shadow-xs">
+                    <span className="font-bold text-white text-[11px] flex items-center leading-none">
+                      <span className="text-blue-400">G</span>
+                      <span className="text-red-400">o</span>
+                      <span className="text-yellow-400">o</span>
+                      <span className="text-blue-400">g</span>
+                      <span className="text-green-400">l</span>
+                      <span className="text-red-400">e</span>
+                    </span>
+                    <div className="flex gap-0.5">
+                      {[...Array(5)].map((_, i) => (
+                        <span key={i} className="text-amber-400 text-xs">★</span>
+                      ))}
+                    </div>
+                    <span className="text-[10px] text-slate-300 font-semibold leading-none">4.6 <span className="text-slate-400 font-normal">Rating</span></span>
+                  </div>
+                </>
+              )}
+            </div>
           </div>
 
           {/* Right Direct-CTA Card (Pristine and compact on both mobile and desktop views) */}
@@ -404,8 +427,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* 3. Social Proof Banner */}
-      <TrustpilotBadge isWireframe={isWireframe} />
 
       {/* 4. Three Simple Steps Section */}
       <section 
