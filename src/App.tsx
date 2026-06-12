@@ -258,8 +258,8 @@ export default function App() {
         id="hero-section" 
         className={
           isWireframe 
-            ? "relative bg-white text-slate-900 border-b-2 border-slate-900 flex items-center min-h-[calc(85vh-72px)] py-10 md:py-16 overflow-hidden"
-            : "relative bg-brand-blue-800 text-white flex items-center min-h-[calc(85vh-72px)] py-10 md:py-16 overflow-hidden"
+            ? "relative bg-white text-slate-900 border-b-2 border-slate-900 flex items-center min-h-[calc(100vh-72px)] md:min-h-[calc(85vh-72px)] py-12 md:py-14 overflow-hidden"
+            : "relative bg-brand-blue-800 text-white flex items-center min-h-[calc(100vh-72px)] md:min-h-[calc(85vh-72px)] py-12 md:py-14 overflow-hidden"
         }
       >
         {isWireframe ? (
